@@ -14,13 +14,12 @@ type CandidateTestCase struct {
 }
 
 type CandidateInput struct {
-	BoardId     int
-	Coordinates Coordinates
+	BoardId int
+	X       int
+	Y       int
 }
 
 type Coordinates struct {
-	X int
-	Y int
 }
 
 func (suite *SolverTestSuite) TestGetCandidates() {
@@ -29,10 +28,8 @@ func (suite *SolverTestSuite) TestGetCandidates() {
 			Description: "Board 0: 0,0",
 			Input: CandidateInput{
 				BoardId: 0,
-				Coordinates: Coordinates{
-					X: 0,
-					Y: 0,
-				},
+				X:       0,
+				Y:       0,
 			},
 			Expected: []int{3, 4, 5},
 		},
@@ -40,10 +37,8 @@ func (suite *SolverTestSuite) TestGetCandidates() {
 			Description: "Board 0: 0,5",
 			Input: CandidateInput{
 				BoardId: 0,
-				Coordinates: Coordinates{
-					X: 0,
-					Y: 5,
-				},
+				X:       0,
+				Y:       5,
 			},
 			Expected: []int{5, 9},
 		},
@@ -51,7 +46,7 @@ func (suite *SolverTestSuite) TestGetCandidates() {
 
 	for _, testCase := range cases {
 		log.Print("Test Case: ", testCase.Description)
-		candidates := suite.Solvers[testCase.Input.BoardId].CellCandidates(testCase.Input.Coordinates.X, testCase.Input.Coordinates.Y)
+		candidates := suite.Solvers[testCase.Input.BoardId].CellCandidates(testCase.Input.X, testCase.Input.Y)
 		sort.Ints(candidates)
 		assert.Equal(suite.T(), testCase.Expected, candidates)
 	}
