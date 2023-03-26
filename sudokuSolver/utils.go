@@ -3,9 +3,10 @@ package sudokuSolver
 import (
 	"errors"
 	"fmt"
-	"github.com/fatih/color"
 	"strconv"
 	"strings"
+
+	"github.com/fatih/color"
 )
 
 func ParseInput(input string) ([][]int, error) {
@@ -15,7 +16,7 @@ func ParseInput(input string) ([][]int, error) {
 		return nil, errors.New("bad input, too many rows")
 	}
 
-	//allocate array
+	// allocate array
 	arr := make([][]int, 9)
 	for row, rowArr := range rows {
 		rowItems := strings.Split(rowArr, ",")

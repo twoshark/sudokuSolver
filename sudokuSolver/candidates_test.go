@@ -1,9 +1,10 @@
 package sudokuSolver
 
 import (
+	"sort"
+
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
-	"sort"
 )
 
 type CandidateTestCase struct {
