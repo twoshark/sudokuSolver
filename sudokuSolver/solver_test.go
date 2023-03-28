@@ -126,6 +126,6 @@ func (suite *SolverTestSuite) TestSolve() {
 		}
 		assert.Equal(suite.T(), board, testCase.Board)
 		solver := NewSudokuSolver(board)
-		_ = solver.Solve()
+		_ = solver.Solve() //TODO: Add solved boards to cases
 	}
 }
