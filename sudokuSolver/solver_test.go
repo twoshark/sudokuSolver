@@ -117,3 +117,15 @@ func (suite *SolverTestSuite) TestNewSudokuSolver() {
 		assert.Equal(suite.T(), testCase.Board, suite.Solvers[i].board)
 	}
 }
+
+func (suite *SolverTestSuite) TestSolve() {
+	for _, testCase := range Cases {
+		board, err := ParseInput(testCase.Input)
+		if err != nil {
+			panic(err)
+		}
+		assert.Equal(suite.T(), board, testCase.Board)
+		solver := NewSudokuSolver(board)
+		_ = solver.Solve()
+	}
+}
