@@ -81,7 +81,7 @@ func (s *SudokuSolver) Solve() [][]int {
 			break
 		}
 		if !changed {
-			log.Error("Full confidence values exhausted before solve, proceeding to guess trials...")
+			log.Error("Full confidence values exhausted before solve")
 			s.PrintBoardtoLogs()
 			break
 		}
