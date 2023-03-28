@@ -40,7 +40,7 @@ func (s *SudokuSolver) UpdateBoard(x, y int, value int) {
 
 func (s *SudokuSolver) Solve() [][]int {
 	log.Print("Original Board:")
-	s.PrintBoardtoLogs()
+	s.PrintBoardToLogs()
 	og := make([][]int, 9)
 	for i := range s.board {
 		og[i] = make([]int, len(s.board[i]))
