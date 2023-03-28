@@ -35,7 +35,7 @@ func ParseInput(input string) ([][]int, error) {
 	return arr, nil
 }
 
-func (s *SudokuSolver) PrintBoardtoLogs() {
+func (s *SudokuSolver) PrintBoardToLogs() {
 	for row := 0; row < 9; row++ {
 		for column := 0; column < 9; column++ {
 			if s.board[row][column] == 0 {

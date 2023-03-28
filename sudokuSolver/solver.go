@@ -82,7 +82,7 @@ func (s *SudokuSolver) Solve() [][]int {
 		}
 		if !changed {
 			log.Error("Full confidence values exhausted before solve")
-			s.PrintBoardtoLogs()
+			s.PrintBoardToLogs()
 			break
 		}
 		passCount++
