@@ -19,8 +19,6 @@ type CandidateInput struct {
 	Y       int
 }
 
-type Coordinates struct {
-}
 
 func (suite *SolverTestSuite) TestGetCandidates() {
 	cases := []CandidateTestCase{
