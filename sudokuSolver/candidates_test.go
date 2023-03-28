@@ -19,7 +19,6 @@ type CandidateInput struct {
 	Y       int
 }
 
-
 func (suite *SolverTestSuite) TestGetCandidates() {
 	cases := []CandidateTestCase{
 		{
